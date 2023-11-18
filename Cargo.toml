@@ -8,3 +8,5 @@ edition = "2021"
 [dependencies]
 walkdir = "2"
 clap = "3.0"
+num_cpus = "1.0"
+threadpool = "1.8.1"

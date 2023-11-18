@@ -4,14 +4,16 @@ use std::fs;
 use std::path::Path;
 use std::io::{self, Write};
 mod encrypt;
+mod chunk_encrypt;
 mod dir_walk;
 use dir_walk::{walk_dir_encrypt, walk_dir_decrypt};
+use std::time::Instant;
 
 fn main() -> io::Result<()> {
     let matches = App::new("🔐 ANCrypt")
-        .version("1.0.0")
+        .version("1.0.1")
         .author("Sky. <akash@collectivai.com>")
-        .about("Encrypts and Decrypts your files with style! ✨")
+        .about("Encrypts and Decrypts your files with style! ✨ V2 with multithreading 🔥 ")
         .arg(Arg::new("mode")
              .short('m')
              .long("mode")
@@ -56,14 +58,18 @@ fn main() -> io::Result<()> {
     // Perform encryption or decryption
     match mode {
         "e" => {
+            let start = Instant::now();
             println!("🔒 Encrypting files in '{}'...", source);
             walk_dir_encrypt(source, target, key)?;
+            println!("time taken {:?}" , start.elapsed());
             println!("✅ Encryption complete! Files saved in '{}'", target);
         },
         "d" => {
+            let start = Instant::now();
             println!("🔓 Decrypting files in '{}'...", source);
             target = "decrypted_file";
             walk_dir_decrypt(source, target, key)?;
+            println!("time taken {:?}" , start.elapsed());
             println!("✅ Decryption complete! Files saved in '{}'", target);
         },
         _ => {
