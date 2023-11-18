@@ -18,7 +18,7 @@ ANCrypt is a powerful file encryption and decryption tool, built with Rust for p
 
 For macOS and Linux users:
 
-1. Download the latest binary from the [Releases page](https://github.com/AkashskyX/ancrypt/blob/main/release/ancrypt).
+1. Download the latest binary from the [Releases page](https://github.com/AkashskyX/ancrypt/blob/main/release/ancrypt). download from here for now 
 2. Make the binary executable: `chmod +x /path/to/ancrypt`
 3. Move it to a directory in your PATH, e.g., `mv /path/to/ancrypt /usr/local/bin/`
 
