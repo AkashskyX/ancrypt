@@ -3,7 +3,7 @@
 ANCrypt is a powerful file encryption and decryption tool, built with Rust for performance and reliability. 
 
 ** binary only supports macos as of now
-
+**multithreading improved performance by 94%
 ## Features
 
 🔐 **Strong Encryption**: Secure your files using XOR encryption.
