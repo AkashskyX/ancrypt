@@ -93,7 +93,7 @@ pub fn walk_dir_encrypt(source: &str, target: &str, key: &[u8]) -> io::Result<()
         let entry = entry?;
         let entry_path = entry.path();
         if entry_path.is_file() {
-            println!("Decrypting file: {}", entry_path.display());
+            println!("encrypting file: {}", entry_path.display());
             let mut file = File::open(entry_path)?;
             let chunk_size = 1024000; // Adjust the chunk size as necessary
             let mut buffer = vec![0; chunk_size];
